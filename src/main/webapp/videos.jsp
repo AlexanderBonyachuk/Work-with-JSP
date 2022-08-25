@@ -8,5 +8,13 @@
 <html>
 <body>
 
+    <%
+        if(session.getAttribute("username")==null) {
+            response.sendRedirect("login.jsp");
+        }
+    %>
+
+    <a href="https://www.youtube.com/watch?v=OuBUUkQfBYM">video 1</a>
+
 </body>
 </html>
