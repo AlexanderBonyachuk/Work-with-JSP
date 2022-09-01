@@ -1,5 +1,7 @@
 package ru.util.login;
 
+import ru.util.DAO.LoginDao;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,15 +14,18 @@ import java.io.IOException;
 public class Login extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String uname = req.getParameter("uname");
         String pass = req.getParameter("pass");
 
-        if(uname.equals("telusko") && pass.equals("1")){
+        LoginDao dao = new LoginDao();
+
+        if (dao.check(uname, pass)) {
             HttpSession session = req.getSession();
             session.setAttribute("username", uname);
             resp.sendRedirect("welcome.jsp");
         } else {
+            System.out.println("Wrong password or user");
             resp.sendRedirect("login.jsp");
         }
     }
