@@ -5,10 +5,8 @@ import java.sql.*;
 import ru.util.model.Alien;
 
 public class AlienDao {
-    public Alien getAlien(int aid) {
-        Alien model = new Alien();
-
-        System.out.println("We here");
+    public Alien getAlien(int id) {
+        Alien a = new Alien();
 
         try {
             Class.forName("org.postgresql.Driver");
@@ -18,16 +16,16 @@ public class AlienDao {
                     "1");
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(
-                    "SELECT * FROM alien WHERE id = " + aid);
+                    "SELECT * FROM alien WHERE id = " + id);
             if(rs.next()) {
-                model.setAid(rs.getInt("aid"));
-                model.setName(rs.getString("name"));
-                model.setTech(rs.getString("tech"));
+                a.setId(rs.getInt("id"));
+                a.setName(rs.getString("name"));
+                a.setTech(rs.getString("tech"));
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return model;
+        return a;
     }
 }

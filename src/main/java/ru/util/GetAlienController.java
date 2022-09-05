@@ -16,9 +16,9 @@ public class GetAlienController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        int aid = Integer.parseInt(req.getParameter("aid"));
+        int aid = Integer.parseInt(req.getParameter("id"));
         AlienDao dao = new AlienDao();
-        Alien a1 = new Alien();
+        Alien a1 = dao.getAlien(aid);
 
         req.setAttribute("alien", a1);
 

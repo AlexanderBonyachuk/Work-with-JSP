@@ -1,16 +1,16 @@
 package ru.util.model;
 
 public class Alien {
-    private int aid;
+    private int id;
     private String name;
     private String tech;
 
-    public int getAid() {
-        return aid;
+    public int getId() {
+        return id;
     }
 
-    public void setAid(int aid) {
-        this.aid = aid;
+    public void setId(int aid) {
+        this.id = aid;
     }
 
     public String getName() {
@@ -31,6 +31,6 @@ public class Alien {
 
     @Override
     public String toString() {
-        return "Alien [aid = " + aid + ", name = " + name + ", tech = " + tech + "]";
+        return "Alien [aid = " + id + ", name = " + name + ", tech = " + tech + "]";
     }
 }
