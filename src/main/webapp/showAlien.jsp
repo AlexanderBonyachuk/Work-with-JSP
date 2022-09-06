@@ -13,9 +13,10 @@
 
     <em>In show alien</em> <br>
     <%
-        Alien a1 = (Alien) request.getAttribute("alien");
+        Alien a1 = (Alien) session.getAttribute("alien");
         out.println(a1);
-    %>
+    %> <hr>
+    <a href="startpage.jsp">To -> start</a>
 
 </body>
 </html>

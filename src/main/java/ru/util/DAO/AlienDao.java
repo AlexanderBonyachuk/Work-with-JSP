@@ -17,6 +17,7 @@ public class AlienDao {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(
                     "SELECT * FROM alien WHERE id = " + id);
+
             if(rs.next()) {
                 a.setId(rs.getInt("id"));
                 a.setName(rs.getString("name"));
