@@ -1,4 +1,6 @@
-package ru.util;
+package ru.util.Servlets;
+
+import ru.util.Student;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.Servlet;

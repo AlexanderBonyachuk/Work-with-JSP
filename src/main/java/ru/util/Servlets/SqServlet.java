@@ -1,4 +1,4 @@
-package ru.util;
+package ru.util.Servlets;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;

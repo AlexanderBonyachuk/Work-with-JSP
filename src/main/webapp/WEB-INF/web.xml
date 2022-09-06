@@ -9,7 +9,7 @@
 
   <!--servlet>
     <servlet-name>abc</servlet-name>
-    <servlet-class>ru.util.AddServlet</servlet-class>
+    <servlet-class>ru.util.Servlets.AddServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>abc</servlet-name>
@@ -18,7 +18,7 @@
 
   <servlet>
     <servlet-name>pqr</servlet-name>
-    <servlet-class>ru.util.SqServlet</servlet-class>
+    <servlet-class>ru.util.Servlets.SqServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>pqr</servlet-name>
@@ -27,7 +27,7 @@
 
   <servlet>
     <servlet-name>my</servlet-name>
-    <servlet-class>ru.util.MyServlet</servlet-class>
+    <servlet-class>ru.util.Servlets.MyServlet</servlet-class>
       <init-param>
         <param-name>name</param-name>
         <param-value>Sukesh</param-value>

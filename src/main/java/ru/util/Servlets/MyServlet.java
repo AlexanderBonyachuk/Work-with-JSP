@@ -1,24 +1,22 @@
-package ru.util;
+package ru.util.Servlets;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/addAlien")
-public class AlienServlet extends HttpServlet {
+public class MyServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
+        out.println("Hello from MyServlet!");
 
-        System.out.println("in servlet Alien");
-
-        int aid = Integer.parseInt(req.getParameter("aid"));
-        String aname =req.getParameter("aname");
-
-        out.println("welcome " + aname);
+        ServletConfig cg = getServletConfig();
+        String str = cg.getInitParameter("name");
+        out.println(str);
     }
 }
