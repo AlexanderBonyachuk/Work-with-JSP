@@ -18,17 +18,15 @@ import java.util.List;
 public class FileUpload extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());
-        List<FileItem> multifiles = null;
         try {
-            multifiles = sf.parseRequest(req);
+            ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());
+            List<FileItem> multifiles = sf.parseRequest(req);
 
-
-        for (FileItem item : multifiles) {
-            item.write(new File("F:\\project\\JV\\JSP-1\\Files" + item.getName()));
-        }
-        System.out.println("File successful upload");
+            for (FileItem item : multifiles) {
+                System.out.println("write...");
+                item.write(new File("F:\\project\\GIT\\" + item.getName()));
+            }
+            System.out.println("File successful upload");
 
         } catch (FileUploadException e) {
             System.out.println("Look exceptions!");
